@@ -1,0 +1,48 @@
+@import "_variables";
+
+@mixin font-box($font-family, $font-size, $font-weight, $line-height) {
+	font-family: $font-family;
+	font-size: $font-size;
+	font-weight: $font-weight;
+	line-height: $line-height;
+}
+
+@mixin flex-container ($flex, $horizon, $vertical) {
+	display: $flex;
+	justify-content: $horizon; 
+	align-items: $vertical;
+}
+
+@mixin flex-align ($flex, $vertical) {
+	display: $flex;
+	align-items: $vertical;
+}
+
+@mixin flex-justify ($flex, $horizon) {
+	display: $flex;
+	justify-content: $horizon; 
+}
+
+@mixin mobile {
+	@media screen and (min-width: $mobile) {
+		@content
+	}
+}
+
+@mixin tablet {
+	@media screen and (min-width: $tablet) {
+		@content
+	}
+}
+
+@mixin desctop {
+	@media screen and (min-width: $desktop) {
+		@content
+	}
+}
+
+@mixin widescreen {
+	@media screen and (min-width: $widescreen) {
+		@content
+	}
+}

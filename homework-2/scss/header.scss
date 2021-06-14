@@ -1,0 +1,349 @@
+@import "_variables";
+@import "_mixins";
+@import "_template";
+
+.header {
+	position: relative;
+
+	width: $full-width;
+
+	background: linear-gradient(225deg, rgb(0, 238, 123) 32%, rgb(24, 160, 251));
+
+    @include mobile {
+        height: auto;
+        padding-bottom: 80px;
+    }
+
+    .container {
+        padding: 0 235px;
+
+        @include desctop {
+            padding: 0px 85px;
+        }
+        @include tablet {
+            padding: 0px 30px;
+        }
+    }
+
+    .header-box {
+        padding: 20px 0;
+    
+        .container {
+            @include flex-container(flex, space-between, center);
+
+           @include mobile {
+               padding: 0 20px;
+           }
+
+           @include tablet {
+               padding: 0 30px;
+           }
+
+           @include widescreen {
+                padding: 0 85px;
+           }
+
+           .header-logo {
+
+            @include mobile {
+                @include flex-container(flex, space-between, center);
+            
+                width: $full-width;
+            }
+
+            @include tablet {
+                width: auto;
+            }
+
+                .header-logo-link {
+                    text-decoration: none;
+                    text-transform: uppercase;
+            
+                    color: $color-text-primery;
+            
+                    @include font-box ($acme-font, 30px, 700, 30px);
+                    font-family: $acme-font;
+                    font-size: 30px;
+                    font-weight: 700;
+
+                    @include mobile {
+                        margin-right: 25px;
+                    }
+
+                    @include desctop {
+                        margin-right: 60px;
+                    }
+
+                    @include widescreen {
+                        margin-right: 143px;
+                    }
+                }
+            }
+
+            .header-menu {
+                width: $full-width;
+
+                @include mobile {
+                    display: none;
+                }
+
+                @include tablet {
+                    display: block;
+                }
+            
+                ul {
+                    @include flex-justify (flex, space-between);
+            
+                    list-style: none;
+            
+                    .header-menu-list {
+                        position: relative;
+            
+                        .header-menu-link {
+                            padding: 15px 0;
+            
+                            cursor: pointer;
+                            text-align: center;
+                            text-decoration: none;
+                            text-transform: uppercase;
+            
+                            color: $color-text-primery;
+            
+
+                            @include font-box ($acme-font, $font-size-small, normal, 32px);
+
+                            @include tablet {
+                                letter-spacing: 0;
+                            }
+
+                            @include desctop {
+                                letter-spacing: 2px;
+                            }
+                        }
+            
+                        &::after {
+                            width: 40px;
+                            height: 2px;
+            
+                            content: "";
+                            transition: 0.2s;
+            
+                            background-color: transparent;
+            
+                           display: block;
+                           margin: 10px auto 0px auto;
+                        }
+            
+                        &:hover::after {
+                            background-color: $bgc-primery;
+                        }
+                    }
+                }
+            }
+            .block-btn {
+                @include flex-justify (flex, flex-end);
+
+                @include mobile {
+                    display: none;
+                }
+
+                @include tablet {
+                    display: flex;
+
+                    margin-left: 0;
+                }
+
+                @include desctop {
+                     margin-left: 48px;
+                }
+            
+                .header-btn {
+                    &:first-child {
+                        margin-right: 20px;
+            
+                        white-space: nowrap;
+                        letter-spacing: 2px;
+                        text-transform: uppercase;
+            
+                        color: $color-text-primery;
+                        border: 2px solid $bgc-primery;
+                        border-radius: 20px;
+            
+                        @include font-box ($acme-font, $font-size-small, normal, $line-size-large);
+
+                        @include tablet {
+                            padding: 8px 25px;
+                        }
+
+                        @include desctop {
+                            padding: 8px 54px;
+                        }
+                    }
+                }
+            
+                .header-btn {
+                    &:last-child {
+                        white-space: nowrap;
+                        letter-spacing: 2px;
+                        text-transform: uppercase;
+            
+                        color: $color-text-primery;
+                        border: 2px solid $bgc-primery;
+                        border-radius: 20px;
+            
+                        @include font-box ($acme-font, $font-size-small, normal, $line-size-large);
+
+                        @include tablet {
+                            padding: 8px 18px;
+                        }
+
+                        @include desctop {
+                            padding: 8px 22px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .page-title {
+		
+
+		text-align: center;
+		text-transform: uppercase;
+
+		color: $color-text-primery;
+
+		font-family: $actor-font;
+		
+        font-weight: normal;
+
+        @include mobile {
+            margin-top: 30px;
+
+			font-size: 60px;
+			line-height: 50px;
+        }
+
+        @include desctop {
+            margin-top: 102px;
+            font-size: 110px;
+		    line-height: 130px;
+        }
+    }
+    
+}
+
+.page-about {
+    @include flex-container (flex, space-around, center);
+
+	width: $full-width;
+
+	@include mobile {
+		flex-direction: column;
+        margin-top: 60px;
+	}
+
+    @include tablet {
+        flex-direction: row;
+    }
+    @include desctop{
+        justify-content: space-between;
+    }
+
+	.page-about-text {
+        display: block;
+		position: relative;
+        @include font-box($aclonica-font, 20px, normal, 26px);
+        color: $color-text-primery;
+
+		@include mobile {
+            margin-bottom: 30px;
+            font-size: $font-size-medium;
+            line-height: 22px;
+            margin-left: 40px;
+        }
+
+		@include tablet {
+			width: 70%;
+            margin-left: 30px;
+		}
+        @include desctop {
+            font-size: 20px;
+        }
+        @include widescreen {
+            margin-left: 0;
+            
+        }
+
+
+		&::before {
+			position: absolute;
+			top: 0;
+			left: -29px;
+
+			display: block;
+
+			width: 2px;
+			height: 80%;
+
+			content: '';
+
+			background: $bgc-primery;
+		}
+	}
+
+	.page-about-btn {
+		padding: 8px 54px;
+
+		text-transform: uppercase;
+
+		color: $colot-text-third;
+		border-radius: 20px;
+		background: $bgc-primery;
+		box-shadow: 0 6px 12px rgba(127, 127, 127, 0.3);
+
+		@include font-box($acme-font, 12px, normal, 24px);
+	}
+}
+
+.header-box-fixed {
+	position: fixed;
+	z-index: 2;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+
+	animation-name: show-header;
+	animation-duration: 0.5s;
+
+	background: linear-gradient(225deg, rgb(0, 238, 123) 32%, rgb(24, 160, 251));
+
+    @include mobile {
+        left: 0;
+    }
+}
+
+@keyframes show-header {
+	0% {
+		top: -78px;
+
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+
+.burger {
+	position: absolute;
+	z-index: 5;
+	top: 0;
+	left: -100%;
+	padding: 50px 10px;
+
+	transition: all 0.5s ease-out;
+}
