@@ -1,0 +1,349 @@
+@import "_variables";
+@import "_mixins";
+@import "_template";
+
+.carousel {
+	width: $full-width;
+	height: auto;
+	padding: 25px 20px;
+
+	background: linear-gradient(220deg, silver 30%, lightblue 97%, blue 142%);
+
+	.container {
+		position: relative;
+
+		@include mobile {
+			padding: 0;
+		}
+
+		@include tablet {
+			padding: 60px 0;
+		}
+
+		.container-wrapper {
+			@include flex-container(flex, space-between, baseline);
+
+			@include mobile {
+				flex-direction: column;
+			}
+
+			@include tablet {
+				flex-direction: row;
+			}
+
+			.carousel-menu {
+				position: relative;
+
+				min-height: 600px;
+
+				background: $bgc-primery;
+
+				@include mobile {
+					width: $full-width;
+					padding-top: 39px;
+					padding-bottom: 15px;
+					padding-left: 62px;
+
+					border-radius: 5px;
+				}
+
+				@include tablet {
+					width: 35%;
+					padding: 60px 0 40px 60px;
+				}
+
+				@include desctop {
+					width: 30%;
+				}
+
+				@include widescreen {
+					padding-left: 135px;
+				}
+
+				.carousel-menu-list {
+					.carousel-menu-btn {
+						@include font-box ($aclonica-font, $font-size-medium, normal, 32px);
+
+						@include tablet {
+							font-size: 14px;
+						}
+
+						@include desctop {
+							font-size: $font-size-medium;
+						}
+					}
+				}
+			}
+
+			.slick-wrapper {
+				@include mobile {
+					width: $full-width;
+				}
+
+				@include tablet {
+					width: 65%;
+				}
+
+				@include desctop {
+					width: 70%;
+				}
+
+				.slick-block {
+					@include mobile {
+						width: $full-width;
+						padding-left: 18px;
+					}
+
+					@include tablet {
+						padding-left: 45px;
+					}
+
+					@include desctop {
+						padding-left: 60px;
+					}
+
+					@include widescreen {
+						padding-left: 130px;
+					}
+
+					.slick-block-title {
+						color: $color-text-seconrary;
+
+						font-family: $actor-font;
+						font-weight: normal;
+
+						line-height: 120px;
+
+						@include mobile {
+							margin-top: 32px;
+
+							font-size: 32px;
+							line-height: 40px;
+						}
+
+						@include tablet {
+							padding-right: 0;
+
+							font-size: 40px;
+						}
+
+						@include desctop {
+							font-size: 60px;
+						}
+
+						@include widescreen {
+							font-size: 90px;
+						}
+					}
+
+					.slick-wrapper-info {
+						position: relative;
+
+						@include mobile {
+							margin-top: 25px;
+							margin-left: 18px;
+						}
+
+						@include tablet {
+							margin-top: 25px;
+							margin-left: 40px;
+						}
+
+						@include desctop {
+							margin-top: 70px;
+							margin-left: 110px;
+						}
+
+						&::before {
+							position: absolute;
+							top: 0;
+							left: -35px;
+
+							display: block;
+
+							width: 2px;
+							height: 80%;
+
+							content: '';
+
+							background: $bgc-border-primery;
+						}
+
+						.slick-block-text {
+							color: $color-text-seconrary;
+
+							font-family: $aclonica-font;
+							font-weight: normal;
+							line-height: 36px;
+
+							@include mobile {
+								padding-right: 0;
+
+								font-size: $font-size-medium;
+							}
+
+							@include desctop {
+								font-size: $font-size-large;
+							}
+
+							@include widescreen {
+								padding-right: 240px;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.active-slide {
+			display: none;
+		}
+
+		.next-arrow {
+			position: absolute;
+			z-index: 2;
+
+			@include mobile {
+				top: 32px;
+				left: 295px;
+
+				width: 20px;
+				height: 20px;
+			}
+
+			@include tablet {
+				top: 140px;
+				left: 190px;
+			}
+
+			@include desctop {
+				left: 230px;
+			}
+
+			@include widescreen {
+				left: 370px;
+			}
+
+			img {
+				@include mobile {
+					width: 100%;
+				}
+
+				@include tablet {
+					width: auto;
+				}
+			}
+		}
+
+		.prev-arrow {
+			position: absolute;
+			z-index: 2;
+
+			@include mobile {
+				top: 68px;
+				left: 295px;
+
+				width: 20px;
+				height: 20px;
+			}
+
+			@include tablet {
+				top: 94px;
+				left: 190px;
+			}
+
+			@include desctop {
+				left: 230px;
+			}
+
+			@include widescreen {
+				top: 84px;
+				left: 370px;
+			}
+
+			img {
+				@include mobile {
+					width: 100%;
+				}
+
+				@include tablet {
+					width: auto;
+				}
+			}
+		}
+	}
+}
+
+.slick-slider .slick-dots {
+	@include flex-container (flex, center, center);
+	position: absolute;
+
+	flex-direction: column;
+
+	@include mobile {
+		top: -560px;
+		left: -33px;
+	}
+
+	@include tablet {
+		top: -20px;
+		left: -292px;
+	}
+
+	@include desctop {
+		left: -328px;
+	}
+
+	@include widescreen {
+		left: -420px;
+	}
+}
+
+.slick-slider .slick-dots li {
+	padding-bottom: 14px;
+
+	list-style: none;
+
+	cursor: pointer;
+
+	@include mobile {
+		padding-right: 130px;
+	}
+
+	@include tablet {
+		padding-right: 150px;
+	}
+}
+
+.slick-slider .slick-dots button {
+	width: 105px;
+	height: 0;
+
+	border: none;
+	outline: none;
+
+	font-size: 0;
+}
+
+.slick-slider .slick-dots .slick-active button {
+	height: 2px;
+
+	outline: none;
+	background-color: $bgc-border-primery;
+
+	@include mobile {
+		width: 40px;
+	}
+
+	@include tablet {
+		width: 30px;
+	}
+
+	@include desctop {
+		width: 40px;
+	}
+
+	@include widescreen {
+		width: 105px;
+	}
+}

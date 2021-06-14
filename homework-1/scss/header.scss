@@ -1,0 +1,331 @@
+@import "_variables";
+@import "_mixins";
+@import "_template";
+
+.header {
+	position: relative;
+
+	width: $full-width;
+
+	background: linear-gradient(225deg, rgb(0, 238, 123) 32%, rgb(24, 160, 251));
+
+	@include mobile {
+		height: auto;
+		padding-bottom: 100px;
+	}
+
+	@include desctop {
+		padding-bottom: 188px;
+	}
+
+	.header-box {
+		padding: 20px 0;
+
+		.container {
+			@include flex-container(flex, space-between, center);
+
+			@include mobile {
+				padding: 0 20px;
+			}
+
+			@include tablet {
+				padding: 0 30px;
+			}
+
+			@include widescreen {
+				padding: 0 85px;
+			}
+
+			.header-logo {
+				@include mobile {
+					@include flex-container(flex, space-between, center);
+
+					width: $full-width;
+				}
+
+				@include tablet {
+					width: auto;
+				}
+
+				.header-logo-link {
+					text-decoration: none;
+					text-transform: uppercase;
+
+					color: $color-text-primery;
+
+					@include font-box ($acme-font, 30px, 700, 30px);
+					font-family: $acme-font;
+					font-size: 30px;
+					font-weight: 700;
+
+					@include mobile {
+						margin-right: 25px;
+					}
+
+					@include desctop {
+						margin-right: 60px;
+					}
+
+					@include widescreen {
+						margin-right: 143px;
+					}
+				}
+			}
+
+			.header-menu {
+				width: $full-width;
+
+				@include mobile {
+					display: none;
+				}
+
+				@include tablet {
+					display: block;
+				}
+
+				ul {
+					@include flex-justify (flex, space-between);
+
+					list-style: none;
+
+					.header-menu-list {
+						position: relative;
+
+						.header-menu-link {
+							padding: 15px 0;
+
+							cursor: pointer;
+							text-align: center;
+							text-decoration: none;
+							text-transform: uppercase;
+
+							color: $color-text-primery;
+
+
+							@include font-box ($acme-font, $font-size-small, normal, 32px);
+
+							@include tablet {
+								letter-spacing: 0;
+							}
+
+							@include desctop {
+								letter-spacing: 2px;
+							}
+						}
+
+						&::after {
+							display: block;
+
+							width: 40px;
+							height: 2px;
+							margin: 10px auto 0 auto;
+
+							content: "";
+							transition: 0.2s;
+
+							background-color: transparent;
+						}
+
+						&:hover::after {
+							background-color: $bgc-primery;
+						}
+					}
+				}
+			}
+
+			.block-btn {
+				@include flex-justify (flex, flex-end);
+
+				@include mobile {
+					display: none;
+				}
+
+				@include tablet {
+					display: flex;
+
+					margin-left: 0;
+				}
+
+				@include desctop {
+					margin-left: 48px;
+				}
+
+				.header-btn {
+					&:first-child {
+						margin-right: 20px;
+
+						cursor: pointer;
+
+						white-space: nowrap;
+						text-decoration: none;
+						letter-spacing: 2px;
+						text-transform: uppercase;
+
+						color: $color-text-primery;
+						border: 2px solid $bgc-primery;
+						border-radius: 20px;
+						background: none;
+
+						@include font-box ($acme-font, $font-size-small, normal, $line-size-large);
+
+						@include tablet {
+							padding: 8px 25px;
+						}
+
+						@include desctop {
+							padding: 8px 54px;
+						}
+					}
+				}
+
+				.header-btn {
+					&:last-child {
+						cursor: pointer;
+						white-space: nowrap;
+						text-decoration: none;
+						letter-spacing: 2px;
+						text-transform: uppercase;
+
+						color: $color-text-primery;
+						border: 2px solid $bgc-primery;
+						border-radius: 20px;
+						background: none;
+
+						@include font-box ($acme-font, $font-size-small, normal, $line-size-large);
+
+						@include tablet {
+							padding: 8px 18px;
+						}
+
+						@include desctop {
+							padding: 8px 22px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.page-title {
+		text-align: center;
+		text-transform: uppercase;
+
+		color: $color-text-primery;
+
+		font-family: $actor-font;
+
+		font-weight: normal;
+
+		@include mobile {
+			margin-top: 30px;
+
+			font-size: 60px;
+			line-height: 50px;
+		}
+
+		@include desctop {
+			margin-top: 102px;
+
+			font-size: 110px;
+			line-height: 130px;
+		}
+	}
+
+	.sub-nuv {
+		@include flex-container(flex, space-between, center);
+		position: absolute;
+		bottom: -40px;
+		left: 50%;
+
+		height: 80px;
+
+		transform: translateX(-50%);
+
+		border-top: 5px solid $bgc-border-primery;
+		border-radius: 5px;
+		background: $bgc-primery;
+		box-shadow: 0 12px 24px #F2F2F2;
+
+		@include mobile {
+			width: 80%;
+		}
+
+		@include desctop {
+			width: 770px;
+		}
+
+		.sub-nuv-link {
+			display: block;
+
+			width: 33%;
+
+			text-align: center;
+			text-decoration: none;
+			letter-spacing: 2px;
+			text-transform: uppercase;
+
+			color: $color-text-fourth;
+			border-right: 1px solid #E5E5E5;
+
+			@include font-box ($acme-font, $font-size-small, 400, 40px);
+
+			&:last-child {
+				border-right: none;
+			}
+		}
+
+		.active {
+			color: $colot-text-third;
+		}
+	}
+
+	.sub-nuv-fixed {
+		position: fixed;
+		z-index: 3;
+		top: 78px;
+		left: 50%;
+
+		transform: translateX(-50%);
+	}
+}
+
+.header-box-fixed {
+	position: fixed;
+	z-index: 2;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+
+	animation-name: show-header;
+	animation-duration: 0.5s;
+
+	background: linear-gradient(225deg, rgb(0, 238, 123) 32%, rgb(24, 160, 251));
+
+	@include mobile {
+		left: 0;
+	}
+}
+
+@keyframes show-header {
+	0% {
+		top: -78px;
+
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+.burger {
+	position: absolute;
+	z-index: 5;
+	top: 0;
+	left: -100%;
+
+	padding: 50px 10px;
+
+	transition: all 0.5s ease-out;
+}
