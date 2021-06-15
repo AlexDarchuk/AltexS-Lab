@@ -1,0 +1,184 @@
+@import "_variables";
+@import "_template";
+@import "_mixins";
+
+.about-skout {
+	background: $bgc-primery;
+
+	@include mobile {
+		@include flex-align (flex, center);
+		flex-direction: column;
+
+		padding: 50px 0;
+	}
+
+	@include tablet {
+		padding: 80px 0;
+	}
+
+	@include desctop {
+		flex-direction: row;
+
+		padding: 100px 40px 100px 40px;
+	}
+
+	@include widescreen {
+		padding: 100px 105px;
+	}
+
+	.about-skout-img {
+		@include mobile {
+			margin-right: 0;
+		}
+
+		@include desctop {
+			flex-grow: 1;
+
+			margin-right: 30px;
+		}
+
+		@include widescreen {
+			margin-right: 90px;
+		}
+
+		img {
+			@include mobile {
+				width: $full-width;
+			}
+
+			@include widescreen {
+				width: auto;
+			}
+		}
+	}
+
+	.about-skout-answer {
+		@include mobile {
+			order: -1;
+
+			width: $full-width;
+		}
+
+		@include tablet {
+			align-self: center;
+		}
+
+		@include desctop {
+			order: inherit;
+		}
+
+		.about-skout-title {
+			color: $color-text-seconrary;
+
+			@include font-box($aclonica-font, 42px, normal, 54px);
+
+			@include mobile {
+				margin-bottom: 15px;
+
+				font-size: $font-size-large;
+			}
+
+			@include tablet {
+				margin-bottom: 43px;
+			}
+
+			@include desctop {
+				font-size: 42px;
+			}
+		}
+
+		.about-skout-text {
+			color: $color-text-seconrary;
+
+			@include font-box($aclonica-font, 16px, normal, 24px);
+
+			@include mobile {
+				margin-bottom: 30px;
+			}
+
+			@include tablet {
+				margin-bottom: 85px;
+			}
+		}
+	}
+
+	.about-skout-btn-block {
+		display: flex;
+		align-self: flex-end;
+
+		@include mobile {
+			@include flex-align (flex, center);
+			flex-direction: column;
+
+			width: $full-width;
+			margin-top: 60px;
+			margin-left: 0;
+		}
+
+		@include tablet {
+			flex-direction: row;
+			justify-content: center;
+
+			margin-bottom: 0;
+		}
+
+		@include desctop {
+			margin-left: -450px;
+		}
+
+		@include widescreen {
+			justify-content: space-between;
+
+			margin-bottom: 100px;
+		}
+
+		.about-skout-btn {
+			@include mobile {
+				margin-right: 0;
+			}
+
+			@include tablet {
+				margin-right: 10px;
+			}
+
+			@include desctop {
+				margin-right: 70px;
+			}
+
+			@include widescreen {
+				margin-right: 0;
+			}
+
+			&:first-child {
+				@extend %button-primery;
+				color: $colot-text-third;
+				background: $bgc-primery;
+
+				@include mobile {
+					margin-bottom: 15px;
+				}
+
+				@include tablet {
+					margin-bottom: 0;
+				}
+
+
+				&:hover {
+					color: $color-text-primery;
+					background: $bgc-border-primery;
+				}
+			}
+
+			&:last-child {
+				@extend %button-primery;
+				color: $color-text-primery;
+				background: $bgc-border-primery;
+
+				&:hover {
+					color: $colot-text-third;
+					background: $bgc-primery;
+				}
+			}
+		}
+	}
+}

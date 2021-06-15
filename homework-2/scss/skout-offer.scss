@@ -1,0 +1,266 @@
+@import "_variables";
+@import "_template";
+@import "_mixins";
+
+.skout-offer {
+	width: $full-width;
+	padding-bottom: 82px;
+
+	background: $bgc-primery;
+
+	.container {
+		padding: 0;
+
+		.skout-offer-question {
+			@include flex-align (flex, center);
+
+			@include mobile {
+				flex-direction: column-reverse;
+			}
+
+			@include desctop {
+				flex-direction: row;
+			}
+
+			img {
+				@include mobile {
+					width: $full-width;
+				}
+			}
+
+			.skout-offer-text {
+				@include mobile {
+					margin-right: 10px;
+					margin-left: 10px;
+				}
+
+				@include widescreen {
+					margin-right: 135px;
+					margin-left: 130px;
+				}
+
+				h5 {
+					color: $color-text-seconrary;
+
+					@include font-box($aclonica-font, 42px, normal, 54px);
+
+					@include mobile {
+						margin-bottom: 20px;
+						padding-right: 20px;
+
+						font-size: $font-size-large;
+						line-height: 36px;
+					}
+
+					@include desctop {
+						margin-bottom: 40px;
+
+						font-size: 42px;
+						line-height: 54px;
+					}
+
+					@include widescreen {
+						padding-right: 0;
+					}
+				}
+
+				p {
+					color: $color-text-seconrary;
+
+					@include font-box($aclonica-font, 16px, normal, 24px);
+
+					@include mobile {
+						font-size: 13px;
+						line-height: $line-size-large;
+					}
+
+					@include desctop {
+						font-size: 16px;
+						line-height: 24px;
+					}
+				}
+			}
+		}
+
+		.skout-offer-accepted {
+			position: relative;
+			z-index: 4;
+
+			display: flex;
+
+			margin: -40px auto 0 auto;
+
+
+			border-radius: 5px;
+			background: linear-gradient(36deg, #03E79A 0%, #13C3E5);
+
+			@include mobile {
+				flex-direction: column;
+
+				width: 90%;
+
+				padding: 30px;
+			}
+
+			@include desctop {
+				flex-direction: row;
+			}
+
+			@include widescreen {
+				width: 1030px;
+				padding: 30px 69px;
+			}
+
+
+			.skout-offer-get {
+				@include mobile {
+					width: $full-width;
+					padding: 0;
+				}
+
+				@include desctop {
+					width: 50%;
+					padding-right: 80px;
+				}
+
+				p {
+					margin-bottom: 9px;
+
+					letter-spacing: 2px;
+					text-transform: uppercase;
+
+					color: $color-text-primery;
+
+					@include font-box($acme-font, 12px, normal, 24px);
+				}
+
+				.offer-get-box {
+					@include flex-container (flex, space-between, center);
+
+
+					border-top: 1.5px solid rgba(255, 255, 255, 0.5);
+
+					@include mobile {
+						padding-top: 15px;
+					}
+
+					@include desctop {
+						padding-top: 34px;
+					}
+
+
+					p {
+						text-transform: none;
+
+						color: $color-text-primery;
+
+						@include font-box($aclonica-font, 24px, normal, 36px);
+
+						@include mobile {
+							padding: 0;
+
+							font-size: 20px;
+						}
+
+						@include desctop {
+							padding-left: 55px;
+
+							font-size: 24px;
+						}
+					}
+
+					button {
+						cursor: pointer;
+						transition: transform 0.4s;
+
+						border: none;
+						outline: none;
+						background: none;
+
+						&:hover svg {
+							transform: scale(1.2);
+						}
+					}
+				}
+			}
+
+			.skout-offer-become {
+				@include mobile {
+					width: $full-width;
+					margin-top: 20px;
+					padding: 0;
+				}
+
+				@include desctop {
+					width: 50%;
+					padding-left: 69px;
+				}
+
+				@include widescreen {
+					margin-top: 0;
+				}
+
+				p {
+					margin-bottom: 9px;
+
+					letter-spacing: 2px;
+					text-transform: uppercase;
+
+					color: $color-text-primery;
+
+					@include font-box($acme-font, 12px, normal, 24px);
+				}
+
+				.offer-become-box {
+					@include flex-container (flex, space-between, center);
+
+
+
+					border-top: 1.5px solid rgba(255, 255, 255, 0.5);
+
+					@include mobile {
+						padding-top: 15px;
+					}
+
+					@include desctop {
+						padding-top: 34px;
+					}
+
+					p {
+						text-transform: none;
+
+						color: $color-text-primery;
+
+						@include font-box($aclonica-font, 24px, normal, 36px);
+
+						@include mobile {
+							padding: 0;
+
+							font-size: 20px;
+						}
+
+						@include desctop {
+							padding-left: 55px;
+
+							font-size: 24px;
+						}
+					}
+
+					button {
+						cursor: pointer;
+
+						transition: transform 0.4s;
+
+						border: none;
+						outline: none;
+						background: none;
+
+						&:hover svg {
+							transform: scale(1.2);
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -46,24 +46,22 @@
 
 	@include font-box ($acme-font, $font-size-small, normal, $line-size-large);
 
-    &:after {
-        width: 40px;
-        height: 2px;
-    
-        content: "";
-        transition: 0.2s;
-    
-        background-color: transparent;
-    
+	&::after {
 		display: block;
-		max-width: 0 auto;
-    
-    }
+
+		width: 40px;
+		height: 2px;
+		margin: 0 auto;
+
+		content: "";
+		transition: 0.2s;
+
+		background-color: transparent;
+	}
 
 	.burger__link {
 		color: $colot-text-third;
 	}
-
 }
 
 .header-burger-btn {
@@ -71,11 +69,12 @@
 	flex-direction: column;
 
 	.get-btn {
-		padding: 8px 54px;
 		margin-bottom: 16px;
+		padding: 8px 54px;
+
+		cursor: pointer;
 
 		white-space: nowrap;
-		cursor: pointer;
 		text-decoration: none;
 		letter-spacing: 2px;
 		text-transform: uppercase;
@@ -91,8 +90,9 @@
 	.log-btn {
 		padding: 8px 22px;
 
-		white-space: nowrap;
 		cursor: pointer;
+
+		white-space: nowrap;
 		text-decoration: none;
 		letter-spacing: 2px;
 		text-transform: uppercase;
@@ -105,8 +105,6 @@
 		@include font-box ($acme-font, $font-size-small, normal, $line-size-large);
 	}
 }
-
-
 
 .burger-menu-list:hover::after {
 	background-color: $bgc-border-primery;
@@ -123,4 +121,3 @@
 		display: none;
 	}
 }
-

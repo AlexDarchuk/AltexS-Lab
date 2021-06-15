@@ -7,20 +7,23 @@
 	padding: 0;
 }
 
-a{
-    text-decoration: none;
-    color: $color-text-primery;
+a {
+	text-decoration: none;
+
+	color: $color-text-primery;
 }
 
 button {
+	cursor: pointer;
+	text-transform: uppercase;
+
 	border: none;
 	outline: none;
 	background: none;
-	cursor: pointer;
 }
 
-ul{
-    list-style: none;
+ul {
+	list-style: none;
 }
 
 html {
@@ -28,10 +31,15 @@ html {
 }
 
 body {
+	color: $color-text-primery;
 	background-color: #F2F2F2;
-    color: $color-text-primery;
-}
 
+	main {
+		overflow: hidden;
+
+		background: $bgc-primery;
+	}
+}
 
 .container {
 	max-width: 1440px;
@@ -42,6 +50,11 @@ body {
 @import "header";
 @import "burger-menu";
 @import "hamburger";
-
+@import "about-skout";
+@import "skout-security";
+@import "skout-slider";
+@import "skout-plans";
+@import "skout-client";
+@import "skout-offer";
 @import "footer";
 @import "slick";

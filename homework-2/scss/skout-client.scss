@@ -1,0 +1,222 @@
+@import "_variables";
+@import "_template";
+@import "_mixins";
+
+.skout-client {
+	@include mobile {
+		padding-bottom: 80px;
+	}
+
+	@include desctop {
+		padding-bottom: 140px;
+	}
+
+	ul {
+		li {
+			@include mobile {
+				width: 60px;
+			}
+		}
+	}
+
+	.container {
+		@include mobile {
+			padding: 0 30px;
+		}
+
+		@include desctop {
+			padding: 0 135px;
+		}
+
+		.slick-client-box {
+			@include flex-container (flex, space-between, center);
+
+			width: $full-width;
+			margin-bottom: 50px;
+
+			@include mobile {
+				flex-direction: column;
+			}
+
+			@include desctop {
+				flex-direction: row;
+			}
+
+			img {
+				@include mobile {
+					margin: 0 0 64px 0;
+				}
+
+				@include desctop {
+					margin-right: 100px;
+				}
+
+				@include widescreen {
+					margin-left: 150px;
+				}
+			}
+
+			.client-box-block {
+				@include mobile {
+					margin-right: 0;
+				}
+
+				@include widescreen {
+					margin-right: 70px;
+				}
+
+				.client-box-text {
+					color: $color-text-fourth;
+
+					@include font-box($aclonica-font, 24px, normal, 36px);
+
+					@include mobile {
+						text-align: center;
+
+						font-size: $font-size-medium;
+						line-height: $line-size-large;
+					}
+
+					@include tablet {
+						text-align: left;
+					}
+
+					@include desctop {
+						text-align: left;
+
+						font-size: 24px;
+						line-height: 36px;
+					}
+				}
+			}
+		}
+
+		.client-box-author {
+			text-transform: uppercase;
+
+			color: $color-text-fourth;
+
+			@include font-box($acme-font, 12px, normal, 24px);
+
+			@include mobile {
+				text-align: center;
+			}
+
+			@include tablet {
+				text-align: right;
+			}
+		}
+	}
+
+	ul {
+		@include flex-container (flex, space-between, center);
+
+		list-style: none;
+
+		border-bottom: 2px solid #E5E5E5;
+
+		@include mobile {
+			margin-top: 0;
+		}
+
+		@include desctop {
+			margin-top: 100px;
+		}
+
+		li {
+			@include mobile {
+				width: 65px;
+			}
+
+			@include desctop {
+				width: auto;
+			}
+
+			img {
+				@include mobile {
+					width: $full-width;
+				}
+			}
+		}
+	}
+}
+
+.slick-client .slick-dots {
+	position: absolute;
+	bottom: -188px;
+	left: 0;
+
+	width: $full-width;
+
+	border: none;
+
+	@include mobile {
+		bottom: -52px;
+	}
+
+	@include tablet {
+		bottom: -52px;
+	}
+
+	@include desctop {
+		bottom: -189px;
+	}
+}
+
+.slick-client .slick-dots li {
+	list-style: none;
+
+	cursor: pointer;
+
+	@include mobile {
+		padding-top: 20px;
+	}
+
+	@include tablet {
+		padding-top: 55px;
+	}
+}
+
+.slick-client .slick-dots button {
+	cursor: pointer;
+
+	border: none;
+	border-radius: 50px;
+	outline: none;
+	background: transparent;
+
+	font-size: 0;
+
+	@include mobile {
+		width: 70px;
+		height: 3px;
+	}
+
+	@include tablet {
+		width: 80px;
+		height: 5px;
+	}
+
+	@include desctop {
+		width: 100px;
+	}
+}
+
+.slick-client .slick-dots .slick-active button {
+	outline: none;
+	background-color: $bgc-border-primery;
+
+	@include mobile {
+		width: 70px;
+		height: 3px;
+	}
+
+	@include tablet {
+		width: 80px;
+		height: 5px;
+	}
+
+	@include desctop {
+		width: 100px;
+	}
+}

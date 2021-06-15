@@ -100,3 +100,16 @@ btnSkoupTipLefy.forEach((item, index) => {
         }
     });
 });
+
+
+const spanHover = document.querySelectorAll('.security-info ');
+const divBaner = document.querySelectorAll('.marquee');
+
+spanHover.forEach((elem, index) => {
+    elem.addEventListener('mouseover', () => {
+        divBaner[index].style.display = 'block';
+         });
+    elem.addEventListener('mouseout', () => {
+    divBaner[index].style.display = 'none';
+        });
+});

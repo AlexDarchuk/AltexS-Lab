@@ -43,7 +43,7 @@
 }
 
 .footer-info-about {
-    list-style: none;
+	list-style: none;
 
 	@include mobile {
 		width: $full-width;
@@ -52,7 +52,7 @@
 	@include tablet {
 		width: 30%;
 	}
-	
+
 	.info-about-link {
 		display: block;
 
@@ -62,10 +62,9 @@
 	.about-phone {
 		@extend %about-phone;
 
-
 		.about-phone-link {
 			@include font-box($aclonica-font, $font-size-medium, normal, $line-size-large);
-            color: $color-text-fourth;
+			color: $color-text-fourth;
 
 			@include mobile {
 				margin-bottom: $font-size-small;
@@ -82,7 +81,6 @@
 	@include tablet {
 		width: 70%;
 	}
-
 
 	.address-city {
 		border-top: 2px solid $bgc-border-primery;
@@ -126,7 +124,7 @@
 				color: $color-text-fourth;
 
 				font-family: $aclonica-font;
-				
+
 				font-weight: normal;
 				line-height: $line-size-large;
 
@@ -157,17 +155,17 @@
 				line-height: 20px;
 			}
 
-			@include  tablet {
-				margin-bottom: 20px;
+			@include tablet {
 				width: 32%;
+				margin-bottom: 20px;
 			}
 		}
 
 		.city-map {
-
 			@include mobile {
 				margin-bottom: 5px;
 			}
+
 			.city-map-link {
 				text-decoration: none;
 
@@ -187,6 +185,7 @@
 .footer-social {
 	@include flex-container (flex, space-between, end);
 	padding-top: 30px;
+
 	border-top: 2px solid $bgc-border-fourth-light;
 
 	@include mobile {
@@ -199,7 +198,7 @@
 }
 
 .footer-social-icon {
-    display: flex;
+	display: flex;
 
 	@include mobile {
 		justify-content: space-around;
@@ -222,13 +221,13 @@
 			}
 		}
 	}
-	
 }
 
 .footer-social-logo {
 	@include mobile {
 		width: $full-width;
 	}
+
 	@include tablet {
 		width: auto;
 	}
@@ -236,9 +235,10 @@
 	img {
 		@include mobile {
 			display: block;
-			margin: 0 auto;
+
 			width: 105px;
 			height: 33px;
+			margin: 0 auto;
 			margin-top: 21px;
 
 			@include tablet {

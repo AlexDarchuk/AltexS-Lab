@@ -9,8 +9,8 @@
 
 @mixin flex-container ($flex, $horizon, $vertical) {
 	display: $flex;
-	justify-content: $horizon; 
 	align-items: $vertical;
+	justify-content: $horizon;
 }
 
 @mixin flex-align ($flex, $vertical) {
@@ -20,29 +20,25 @@
 
 @mixin flex-justify ($flex, $horizon) {
 	display: $flex;
-	justify-content: $horizon; 
+	justify-content: $horizon;
 }
 
 @mixin mobile {
 	@media screen and (min-width: $mobile) {
-		@content
-	}
+		@content; }
 }
 
 @mixin tablet {
 	@media screen and (min-width: $tablet) {
-		@content
-	}
+		@content; }
 }
 
 @mixin desctop {
 	@media screen and (min-width: $desktop) {
-		@content
-	}
+		@content; }
 }
 
 @mixin widescreen {
 	@media screen and (min-width: $widescreen) {
-		@content
-	}
+		@content; }
 }

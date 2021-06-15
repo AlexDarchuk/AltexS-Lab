@@ -1,0 +1,229 @@
+@import "_variables";
+@import "_template";
+@import "_mixins";
+
+.skout-slider {
+	width: $full-width;
+
+	background: linear-gradient(220deg, $bgc-primery 10%, lightblue 97%);
+
+	.container {
+		@include mobile {
+			padding-top: 50px;
+			padding-bottom: 340px;
+		}
+
+		@include tablet {
+			padding-top: 80px;
+		}
+
+		@include desctop {
+			padding-top: 120px;
+			padding-bottom: 380px;
+		}
+
+		@include widescreen {
+			padding: 120px 135px 470px 135px;
+		}
+
+		.skout-slider-title {
+			color: $color-text-seconrary;
+
+			@include font-box($aclonica-font, 42px, normal, 54px);
+
+			@include mobile {
+				margin-bottom: 30px;
+
+				font-size: $font-size-large;
+				line-height: 36px;
+			}
+
+			@include tablet {
+				font-size: 42px;
+			}
+
+			@include desctop {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+.slick__slider {
+	img {
+		@include mobile {
+			width: 240px;
+			margin-top: 60px;
+			margin-bottom: 40px;
+		}
+
+		@include tablet {
+			width: auto;
+		}
+
+		@include desctop {
+			margin-right: 50px;
+		}
+	}
+
+
+
+	.skout-slider-box {
+		@include flex-container (flex, space-around, center);
+
+		@include mobile {
+			flex-direction: column-reverse;
+		}
+
+		@include desctop {
+			flex-direction: inherit;
+		}
+
+		.skout-slider-block {
+			@include desctop {
+				padding: 0 100px;
+			}
+
+			.slider-block-title {
+				margin-bottom: 18px;
+
+				letter-spacing: 2px;
+				text-transform: uppercase;
+
+				color: $color-text-seconrary;
+
+				@include font-box($actor-font, 18px, bold, 24px);
+
+				@include mobile {
+					font-size: $font-size-small;
+					line-height: $line-size-large;
+				}
+
+				@include tablet {
+					font-size: 18px;
+				}
+			}
+
+			.slider-block-text {
+				padding-bottom: 83px;
+
+				color: $color-text-seconrary;
+
+				@include font-box($aclonica-font, 16px, normal, 24px);
+
+				@include mobile {
+					width: $full-width;
+
+					font-size: $font-size-small;
+					line-height: $line-size-large;
+				}
+
+				@include tablet {
+					padding-bottom: 50px;
+
+					font-size: $font-size-medium;
+				}
+			}
+
+			.slider-block-btn {
+				padding: 8px 80px;
+
+				letter-spacing: 2px;
+
+				color: $color-text-primery;
+				border-radius: 20px;
+				background: $bgc-border-primery;
+				box-shadow: 0 6px 12px rgba(127, 127, 127, 0.3);
+
+				@include font-box($acme-font, 12px, normal, 24px);
+
+				@include mobile {
+					display: block;
+
+					margin: 0 auto;
+				}
+			}
+		}
+	}
+}
+
+.slick__slider .slick-dots {
+	@include flex-container (flex, center, center);
+	position: absolute;
+
+
+	@include mobile {
+		top: 0;
+		left: 50%;
+
+		flex-direction: row;
+
+		transform: translateX(-50%);
+	}
+
+	@include desctop {
+		top: 50%;
+		right: 0;
+		left: auto;
+
+
+		flex-direction: column;
+
+		transform: translateY(-50%);
+	}
+}
+
+.slick__slider .slick-dots li {
+	padding: 5px 5px 0 5px;
+
+	list-style: none;
+
+	cursor: pointer;
+
+	@include mobile {
+		margin-right: 14px;
+	}
+
+	@include desctop {
+		margin-right: 0;
+	}
+
+	&:last-child {
+		@include mobile {
+			margin-right: 0;
+		}
+	}
+}
+
+.slick__slider .slick-dots li.slick-active {
+	height: 28px;
+	padding: 9px;
+
+	border: 2px solid $bgc-border-primery;
+	border-radius: 50px;
+}
+
+.slick__slider .slick-dots button {
+	width: 6px;
+	height: 6px;
+	margin-bottom: 15px;
+
+	cursor: pointer;
+
+	border: none;
+	border-radius: 50px;
+	outline: none;
+	background: $bgc-border-primery;
+
+	font-size: 0;
+}
+
+.slick__slider .slick-dots .slick-active button {
+	width: 6px;
+	height: 6px;
+
+	outline: none;
+	background-color: $bgc-border-primery;
+
+	line-height: 28px;
+}

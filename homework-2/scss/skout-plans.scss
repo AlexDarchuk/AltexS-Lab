@@ -1,0 +1,152 @@
+@import "_variables";
+@import "_template";
+@import "_mixins";
+
+.skout-plans {
+	width: $full-width;
+	padding-bottom: 120px;
+
+	@include mobile {
+		margin-top: -280px;
+	}
+
+	@include desctop {
+		margin-top: -310px;
+	}
+
+	.container {
+		padding: 0;
+
+		.plans-title {
+			margin-bottom: 70px;
+
+			text-align: center;
+
+			color: $color-text-seconrary;
+
+			@include font-box($aclonica-font, 42px, normal, 54px);
+
+			@include mobile {
+				margin-bottom: 30px;
+
+				font-size: $font-size-large;
+				line-height: 36px;
+			}
+
+			@include tablet {
+				font-size: 42px;
+				line-height: 54px;
+			}
+		}
+
+		.slick-plans {
+			.skout-plans-bronze,
+			.skout-plans-silver,
+			.skout-plans-gold,
+			.skout-plans-plus {
+				max-width: 330px;
+				min-height: 530px;
+
+				border-bottom: 1px solid #F2F2F2;
+				border-radius: 4px;
+				background: $bgc-primery;
+
+				@include mobile {
+					margin: 0 7px;
+					padding: 42px 24px 37px 24px;
+				}
+
+				@include widescreen {
+					margin: 0 7px;
+					padding: 42px 55px 37px 55px;
+				}
+
+
+
+				&:hover {
+					background: linear-gradient(125deg, #18A0FB 47%, #00EE7B 88%);
+
+					.skout-plans-block {
+						.skout-plans-list {
+							.skout-plans-text {
+								color: $color-text-primery;
+
+								span {
+									color: $color-text-primery;
+								}
+							}
+						}
+					}
+
+					.skout-plans-title {
+						color: $color-text-primery;
+					}
+
+					svg {
+						path {
+							stroke: $color-text-primery;
+						}
+					}
+				}
+
+				.skout-plans-title {
+					margin-bottom: 40px;
+
+					text-align: center;
+					letter-spacing: 2px;
+					text-transform: uppercase;
+
+					color: $colot-text-third;
+
+					@include font-box($acme-font, 18px, normal, $line-size-large);
+				}
+
+				.skout-plans-block {
+					list-style: none;
+
+					.skout-plans-list {
+						@include flex-align (flex, center);
+
+						margin-bottom: 15px;
+						padding-top: 6px;
+
+						border-top: 2px solid #F2F2F2;
+
+						.skout-plans-text {
+							margin-left: 21px;
+
+							color: $color-text-fourth;
+
+							@include font-box($aclonica-font, 13px, normal, 24px);
+
+							span {
+								color: #E5E5E5;
+							}
+						}
+					}
+				}
+
+				.skout-plans-btn {
+					margin-top: 25px;
+					padding: 8px 48px;
+
+					white-space: nowrap;
+
+					letter-spacing: 2px;
+
+					color: $colot-text-third;
+					border: 1.5px solid $bgc-border-primery;
+					border-radius: 20px;
+					background: $bgc-primery;
+					box-shadow: 0 6px 12px rgba(127, 127, 127, 0.3);
+
+					@include font-box($acme-font, $font-size-small, normal, $font-size-medium);
+
+					@include desctop {
+						width: $full-width;
+					}
+				}
+			}
+		}
+	}
+}
