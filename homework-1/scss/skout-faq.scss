@@ -1,0 +1,209 @@
+@import "_variables";
+@import "_mixins";
+@import "_template";
+
+.skout-faq {
+	width: $full-width;
+
+	background-color: $bgc-primery;
+
+	@include mobile {
+		padding: 24px 20px;
+	}
+
+	@include tablet {
+		padding-bottom: 50px;
+	}
+
+	@include desctop {
+		padding: 100px 80px;
+	}
+
+	@include widescreen {
+		padding: 100px 135px;
+	}
+
+	.faq-title {
+		width: $full-width;
+
+		color: $color-text-fourth-light;
+		border-top: 2px solid $bgc-border-fourth-light;
+
+		@include font-box ($actor-font, 30px, 400, 30px);
+
+		@include mobile {
+			padding: 24px 0;
+		}
+
+		@include tablet {
+			padding-top: 100px;
+		}
+
+		@include desctop {
+			padding-top: 10px;
+			padding-bottom: 50px;
+		}
+
+		span {
+			text-transform: uppercase;
+
+			font-weight: 700;
+		}
+	}
+
+	.skout-faq-block {
+		width: $full-width;
+
+		@include flex-container (flex, space-between, center);
+
+		.block-question {
+			@include flex-align(flex, center);
+
+			@include mobile {
+				padding-right: 0;
+			}
+
+			@include tablet {
+				padding-right: 130px;
+			}
+
+			span {
+				color: #E5E5E5;
+
+				font-family: $actor-font;
+				line-height: 130px;
+
+				@include mobile {
+					font-size: 40px;
+				}
+
+				@include tablet {
+					font-size: 110px;
+				}
+			}
+
+			.block-question-text {
+				color: $color-text-seconrary;
+
+				font-family: $aclonica-font;
+
+				font-weight: normal;
+
+				@include mobile {
+					margin-left: 35px;
+
+					font-size: $font-size-medium;
+					line-height: $line-size-large;
+				}
+
+				@include tablet {
+					margin-left: 130px;
+
+					font-size: $font-size-large;
+					line-height: 36px;
+				}
+			}
+		}
+
+		img {
+			padding: 10px;
+
+			cursor: pointer;
+		}
+	}
+}
+
+.block-answer {
+	display: none;
+	align-items: center;
+
+	padding-right: 130px;
+
+	transition: 1s;
+
+	@include mobile {
+		padding-right: 0;
+	}
+
+	@include tablet {
+		padding-right: 130px;
+	}
+
+	span {
+		color: #E5E5E5;
+
+		font-family: $actor-font;
+		font-size: 110px;
+		line-height: 130px;
+
+		@include mobile {
+			font-size: 40px;
+		}
+
+		@include tablet {
+			font-size: 110px;
+		}
+	}
+
+	.block-answer-text {
+		color: $color-text-seconrary;
+
+		font-family: $aclonica-font;
+
+		font-weight: normal;
+
+
+		@include mobile {
+			margin-left: 35px;
+
+			font-size: $font-size-medium;
+			line-height: 24px;
+		}
+
+		@include tablet {
+			margin-left: 130px;
+
+			font-size: $font-size-medium;
+			line-height: 36px;
+		}
+	}
+}
+
+.active-up {
+	transform: rotate(180deg);
+}
+
+.active-block {
+	display: flex;
+
+	animation-name: show-answer;
+	animation-duration: 1s;
+}
+
+@keyframes show-answer {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+.skout-faq-btn {
+	display: block;
+
+	margin: 0 auto;
+	margin-top: 50px;
+
+	cursor: pointer;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+
+	color: $colot-text-third;
+	border: none;
+	outline: none;
+	background: none;
+
+	@include font-box ($acme-font, $font-size-small, normal, $line-size-large);
+}

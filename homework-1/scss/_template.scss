@@ -1,0 +1,42 @@
+@import "_variables";
+@import "_mixins";
+
+%about-phone {
+	margin-bottom: 30px;
+
+	text-decoration: none;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+
+	color: $color-text-fourth;
+
+	font-family: $acme-font;
+	font-size: 12px;
+	font-weight: normal;
+	line-height: $font-size-large;
+
+	@include mobile {
+		margin-bottom: 12px;
+	}
+}
+
+%button-primery {
+	width: 200px;
+	height: 40px;
+	margin-right: 70px;
+
+	cursor: pointer;
+	text-transform: uppercase;
+
+	color: $colot-text-third;
+	border: 1.5px solid $bgc-border-primery;
+	border-radius: 20px;
+	outline: none;
+	background: $bgc-primery;
+	box-shadow: 0 6px 12px rgba(127, 127, 127, 0.3);
+
+	font-family: $acme-font;
+	font-size: $font-size-small;
+	font-weight: normal;
+	line-height: $line-size-large;
+}
