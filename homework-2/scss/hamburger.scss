@@ -1,0 +1,123 @@
+@import "_variables";
+@import "_mixins";
+@import "_template";
+
+.is-hidden {
+	position: fixed;
+	z-index: 5;
+	top: 78px;
+	left: 0;
+
+	display: none;
+	overflow-y: scroll;
+	flex-direction: column;
+	justify-content: space-between;
+
+	width: $full-width;
+	height: 100%;
+	padding: 40px 10px 100px 10px;
+
+	transition: all 0.5s ease-out;
+
+	background-color: $bgc-primery;
+
+	@include mobile {
+		display: flex;
+	}
+}
+
+.burger__menu {
+	display: flex;
+	flex-direction: column;
+
+	list-style: none;
+}
+
+.burger-menu-list {
+	width: $full-width;
+	margin-bottom: 10px;
+
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+
+	color: $colot-text-third;
+
+	@include font-box ($acme-font, $font-size-small, normal, $line-size-large);
+
+	&::after {
+		display: block;
+
+		width: 40px;
+		height: 2px;
+		margin: 0 auto;
+
+		content: "";
+		transition: 0.2s;
+
+		background-color: transparent;
+	}
+
+	.burger__link {
+		color: $colot-text-third;
+	}
+}
+
+.header-burger-btn {
+	@include flex-align (flex, center);
+	flex-direction: column;
+
+	.get-btn {
+		margin-bottom: 16px;
+		padding: 8px 54px;
+
+		cursor: pointer;
+
+		white-space: nowrap;
+		text-decoration: none;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+
+		color: $colot-text-third;
+		border: 2px solid $bgc-border-primery;
+		border-radius: 20px;
+		background: $bgc-primery;
+
+		@include font-box ($acme-font, $font-size-small, normal, $line-size-large);
+	}
+
+	.log-btn {
+		padding: 8px 22px;
+
+		cursor: pointer;
+
+		white-space: nowrap;
+		text-decoration: none;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+
+		color: $colot-text-third;
+		border: 2px solid $bgc-border-primery;
+		border-radius: 20px;
+		background: $bgc-primery;
+
+		@include font-box ($acme-font, $font-size-small, normal, $line-size-large);
+	}
+}
+
+.burger-menu-list:hover::after {
+	background-color: $bgc-border-primery;
+}
+
+.hamburger {
+	display: none;
+
+	@include mobile {
+		display: block;
+	}
+
+	@include tablet {
+		display: none;
+	}
+}
